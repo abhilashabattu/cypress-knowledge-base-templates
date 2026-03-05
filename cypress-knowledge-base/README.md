@@ -11,7 +11,7 @@ This directory contains reusable, templated Cypress knowledge base files that ca
 
 ## Setting Up the Cypress Knowledge Base in Your Project
 
-> **Important:** Run the prompt below from your project�s root directory so the agent can read your setup and fill placeholders.
+> **Important:** Run the prompt below from your projects root directory so the agent can read your setup and fill placeholders.
 
 ### Steps
 1. Open the agent in your project directory.
