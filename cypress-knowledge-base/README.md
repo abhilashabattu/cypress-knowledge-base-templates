@@ -11,7 +11,7 @@ This directory contains reusable, templated Cypress knowledge base files that ca
 
 ## Setting Up the Cypress Knowledge Base in Your Project
 
-> **Important:** Run the prompt below from your project’s root directory so the agent can read your setup and fill placeholders.
+> **Important:** Run the prompt below from your projectï¿½s root directory so the agent can read your setup and fill placeholders.
 
 ### Steps
 1. Open the agent in your project directory.
@@ -25,7 +25,7 @@ I want to set up the Cypress knowledge base (setup-only) into this project.
 Source repo: https://github.com/abhilashabattu/cypress-knowledge-base-templates (read the `cypress-knowledge-base/` directory for all template files).
 
 Follow these steps exactly:
-1. Explore this project's codebase shallowly — read README, top-level config files (package.json, pyproject.toml, .env.example, etc.), and top-level directory structure.
+1. Explore this project's codebase shallowly ï¿½ read README, top-level config files (package.json, pyproject.toml, .env.example, etc.), and top-level directory structure.
 2. Check if `cypress-knowledge-base/` already exists in this project.
    - If it exists: stop and ask me how to proceed before making any changes.
    - If it does not exist: continue.
@@ -37,11 +37,15 @@ Follow these steps exactly:
    a. Infer as many values as possible from your codebase exploration in step 1.
    b. For any placeholder you cannot confidently determine, ask me before proceeding. Present what you've inferred so far and ask only about the ones you're unsure of.
    c. Never guess. Never leave a `TODO:` annotation that you could have answered from the codebase.
-6. Add the following "Cypress Knowledge Base" section:
+6. Create or update a standalone Cypress KB file:
    - If `CYPRESS_KB.md` does not exist: create it and write the section below as the full content.
    - If `CYPRESS_KB.md` exists but has no "Cypress Knowledge Base" section: append the section below at the end.
-   - If a "Cypress Knowledge Base" section already exists: skip — do not duplicate.
+   - If a "Cypress Knowledge Base" section already exists: skip â€” do not duplicate.
 
+7. If `CLAUDE.md` exists:
+   - Do NOT modify it.
+   - Keep Cypress KB only in `cypress-knowledge-base/` and `CYPRESS_KB.md`.
+   
    The section to add:
    ---
    ## Cypress Knowledge Base
@@ -49,16 +53,16 @@ Follow these steps exactly:
    the knowledge base must follow the rules below.
 
    ### Reading Rules
-   **Step 1 — Always read `cypress-knowledge-base/00-entry.md` first.**
+   **Step 1 ï¿½ Always read `cypress-knowledge-base/00-entry.md` first.**
    This is the index file. It lists all sections with one-line summaries. Based on
    the task at hand, decide which section files to load next. Never load all sections
    at once.
 
-   **Step 2 — Load only the sections mapped to your agent role (see table below).**
+   **Step 2 ï¿½ Load only the sections mapped to your agent role (see table below).**
    Do not load sections outside your mapping. If a task genuinely requires information
    from an out-of-mapping section, rely only on what the user has provided in their prompt.
 
-   **Step 3 — Apply the No Assumptions rule.**
+   **Step 3 ï¿½ Apply the No Assumptions rule.**
    Before using any section file, scan it for unfilled `TODO:` placeholders. If a section
    contains one or more `TODO:` lines, skip that section entirely. Do not infer, guess, or
    fabricate context from incomplete data. Proceed with only what is fully populated.
