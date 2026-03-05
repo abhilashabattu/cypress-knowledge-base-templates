@@ -1,0 +1,1 @@
+# cypress-knowledge-base-templates
