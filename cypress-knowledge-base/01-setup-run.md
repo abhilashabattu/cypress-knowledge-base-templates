@@ -12,17 +12,21 @@ Purpose: install and run Cypress locally.
 - If installed: continue.
 - If not installed: install npm/yarn, then continue.
 
-## 3. Install Cypress (Project-Level)
+## 3. Ensure a Node Project Exists
+- If `package.json` exists: continue.
+- If not: run `npm init -y` to create it.
+
+## 4. Install Cypress (Project-Level)
 - `npm i -D cypress`
 
-## 4. Verify
+## 5. Verify
 - `npx cypress --version`
 
-## 5. Initialize (first time)
+## 6. Initialize (first time)
 - `npx cypress open`
 - Creates `cypress/` + `cypress.config.*`
 
-## 6. Folder Structure
+## 7. Folder Structure
 ```
 cypress/
   e2e/
@@ -31,6 +35,6 @@ cypress/
 cypress.config.js
 ```
 
-## 7. Run
+## 8. Run
 - UI: `npx cypress open`
 - Headless: `npx cypress run`

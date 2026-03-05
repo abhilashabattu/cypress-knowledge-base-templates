@@ -37,10 +37,10 @@ Follow these steps exactly:
    a. Infer as many values as possible from your codebase exploration in step 1.
    b. For any placeholder you cannot confidently determine, ask me before proceeding. Present what you've inferred so far and ask only about the ones you're unsure of.
    c. Never guess. Never leave a `TODO:` annotation that you could have answered from the codebase.
-6. Add the following "Knowledge Base" section to this project's root `CLAUDE.md`:
-   - If `CLAUDE.md` does not exist: create it and write the section below as the full content.
-   - If `CLAUDE.md` exists but has no "Knowledge Base" section: append the section below at the end.
-   - If a "Knowledge Base" section already exists: skip — do not duplicate.
+6. Add the following "Cypress Knowledge Base" section:
+   - If `CYPRESS_KB.md` does not exist: create it and write the section below as the full content.
+   - If `CYPRESS_KB.md` exists but has no "Cypress Knowledge Base" section: append the section below at the end.
+   - If a "Cypress Knowledge Base" section already exists: skip — do not duplicate.
 
    The section to add:
    ---
@@ -86,5 +86,5 @@ Follow these steps exactly:
 7. After setup is complete, show me a summary of:
    - Which `{{PLACEHOLDER}}` values were inferred and what they were set to
    - Which `TODO:` items remain and need manual input from me
-   - Whether `CLAUDE.md` was created or appended to
+   - Whether `CYPRESS_KB.md` was created or appended to
 ```
