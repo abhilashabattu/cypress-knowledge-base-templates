@@ -16,12 +16,12 @@ This directory contains reusable, templated Cypress knowledge base files that ca
 ### Steps
 1. Open the agent in your project directory.
 2. Copy and paste the prompt below.
-3. The agent will explore your repo, install the Cypress KB files, and ask for missing info.
+3. The agent will install the Cypress KB, then immediately execute Cypress setup.
 
-### Prompt
+### Prompt (Install KB + Execute Cypress Setup)
 
 ```
-I want to set up the Cypress knowledge base (setup-only) into this project.
+I want to set up the Cypress knowledge base (setup-only) into this project and then execute Cypress setup immediately.
 Source repo: https://github.com/abhilashabattu/cypress-knowledge-base-templates (read the `cypress-knowledge-base/` directory for all template files).
 
 Follow these steps exactly:
@@ -40,7 +40,7 @@ Follow these steps exactly:
 6. Create or update a standalone Cypress KB file:
    - If `CYPRESS_KB.md` does not exist: create it and write the section below as the full content.
    - If `CYPRESS_KB.md` exists but has no "Cypress Knowledge Base" section: append the section below at the end.
-   - If a "Cypress Knowledge Base" section already exists: skip — do not duplicate.
+   - If a "Cypress Knowledge Base" section already exists: skip - do not duplicate.
 
 7. If `CLAUDE.md` exists:
    - Do NOT modify it.
@@ -87,8 +87,20 @@ Follow these steps exactly:
    No error. No assumption. No behavioral change.
    ---
 
-7. After setup is complete, show me a summary of:
+8. Immediately after KB setup, run the setup flow using `cypress-setup-agent` behavior:
+   - Read `cypress-knowledge-base/00-entry.md` first.
+   - Then read only `cypress-knowledge-base/01-setup-run.md`.
+   - Execute commands (do not only describe them).
+   - If `package.json` is missing, ask before `npm init -y`.
+   - Verify installation with `npx cypress --version`.
+   - Initialize Cypress only if needed (skip if already initialized).
+   - Run a headless validation command (`npx cypress run --spec "cypress/e2e/**/*.cy.*"` or `npx cypress run`).
+
+9. After setup is complete, show me a summary of:
    - Which `{{PLACEHOLDER}}` values were inferred and what they were set to
    - Which `TODO:` items remain and need manual input from me
    - Whether `CYPRESS_KB.md` was created or appended to
+   - Commands executed for Cypress setup
+   - Whether Cypress setup succeeded, partially succeeded, or failed
+   - Any errors and exact next action needed
 ```
